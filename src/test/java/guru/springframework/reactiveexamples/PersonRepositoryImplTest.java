@@ -85,7 +85,7 @@ class PersonRepositoryImplTest {
 
         final Integer id = 3;
 
-        Mono<Person> personMono = personFlux.filter(person -> person.getId() == id).next();
+        Mono<Person> personMono = personRepository.getById(id);
 
         personMono.subscribe(person -> {
             System.out.println(person.toString());
@@ -98,7 +98,7 @@ class PersonRepositoryImplTest {
 
         final Integer id = 8;
 
-        Mono<Person> personMono = personFlux.filter(person -> person.getId() == id).next();
+        Mono<Person> personMono = personRepository.getById(id);
 
         personMono.subscribe(person -> {
             System.out.println(person.toString());
